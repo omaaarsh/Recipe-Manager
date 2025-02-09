@@ -82,24 +82,6 @@ Interchangeable serialization strategies (JSON vs. Text) via `IStringRepository`
 3. **Toggle formats**:
    - Modify `selectedFormat` in `Program.cs` to switch between `FileFormat.Json` and `FileFormat.Txt`.
 
----
-
-## 🧩 Project Structure
-
-```
-RecipeMaster/
-├── Data/
-│   ├── StringJsonRepository.cs    # JSON serialization logic
-│   └── StringTextualRepository.cs # Text serialization logic
-├── Models/
-│   ├── Ingredient.cs              # Base ingredient class
-│   └── Recipe.cs                  # Recipe model
-├── Services/
-│   ├── RecipesRepository.cs       # Recipe storage logic (SOLID-compliant)
-│   └── IngredientsRegister.cs     # Ingredient factory
-├── UI/
-│   └── RecipesConsoleUserInteraction.cs # Console UI logic
-└── Program.cs                     # Entry point (Factory pattern)
 ```
 
 **Happy coding (and cooking)!** 🍪💻  
