@@ -45,3 +45,73 @@ Dynamically instantiate repositories based on user-selected formats:
 IStringRepository repo = selectedFormat == FileFormat.Json 
     ? new StringJsonRepository() 
     : new StringTextualRepository();
+```
+
+### 2. **Template Method**
+`StringRepository` centralizes file I/O logic, while subclasses handle format-specific details:
+```csharp
+abstract class StringRepository : IStringRepository
+{
+    public List<string> Read(string filePath)
+    {
+        // Common file reading logic
+        return TextToString(content); // Delegated to subclass
+    }
+    protected abstract List<string> TextToString(string content);
+}
+```
+
+### 3. **Strategy Pattern**
+Interchangeable serialization strategies (JSON vs. Text) via `IStringRepository`.
+
+---
+
+## 📥 Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/RecipeMaster.git
+   cd RecipeMaster
+   ```
+
+2. **Run the app**:
+   ```bash
+   dotnet run
+   ```
+
+3. **Toggle formats**:
+   - Modify `selectedFormat` in `Program.cs` to switch between `FileFormat.Json` and `FileFormat.Txt`.
+
+---
+
+## 🧩 Project Structure
+
+```
+RecipeMaster/
+├── Data/
+│   ├── StringJsonRepository.cs    # JSON serialization logic
+│   └── StringTextualRepository.cs # Text serialization logic
+├── Models/
+│   ├── Ingredient.cs              # Base ingredient class
+│   └── Recipe.cs                  # Recipe model
+├── Services/
+│   ├── RecipesRepository.cs       # Recipe storage logic (SOLID-compliant)
+│   └── IngredientsRegister.cs     # Ingredient factory
+├── UI/
+│   └── RecipesConsoleUserInteraction.cs # Console UI logic
+└── Program.cs                     # Entry point (Factory pattern)
+```
+
+**Happy coding (and cooking)!** 🍪💻  
+```
+
+---
+
+### Key Additions:
+1. **Badges**: For .NET version and license (customize links as needed).
+2. **SOLID Table**: Clear mapping of principles to code.
+3. **Code Snippets**: Highlight critical patterns (Factory, Template Method).
+4. **Project Structure**: Visualize the architecture for new contributors.
+5. **Screenshot Section**: Add images of JSON/text outputs (replace paths with yours).
+
+Add this to your repo, and developers will instantly grasp the **design philosophy** and **technical rigor** behind your work! 🚀
