@@ -3,7 +3,6 @@
 A C# console application for managing recipes, built with **SOLID principles** and **design patterns** to demonstrate clean, scalable architecture. Save recipes in JSON or text formats, and explore how software design translates to maintainable code!
 
 [![.NET](https://img.shields.io/badge/.NET-6.0-blue)](https://dotnet.microsoft.com/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
 
